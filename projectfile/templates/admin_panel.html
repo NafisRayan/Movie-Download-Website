@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-4" style="background-image: url('/static/admin.gif');">
+    <h2 class="mb-3">Admin Panel</h2>
+    
+    {% if user_data %}
+      <div class="alert alert-info">
+        <p><strong>User Information</strong></p>
+        <p><strong>User ID:</strong> {{ user_data.id }}</p>
+        <p><strong>Username:</strong> {{ user_data.username }}</p>
+        <p><strong>Email:</strong> {{ user_data.email }}</p>
+        <p><strong>Country:</strong> {{ user_data.country }}</p>
+        <p><strong>Liked Category:</strong> {{ user_data.liked_category }}</p>
+        <p><strong>Watched Shows:</strong> {{ user_data.watched_shows }}</p>
+        <p><strong>Planned Shows:</strong> {{ user_data.planned_shows }}</p>
+      </div>
+    {% endif %}
+    
+    <form method="POST">
+      <div class="form-group">
+        <label for="user_identifier">Search for User by UserID:</label>
+        <input type="text" class="form-control" id="user_identifier" name="user_identifier">
+      </div>
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+    
+    {% if add_show_visible %}
+      <div class="mt-3">
+        <h4>Add New TV Show</h4>
+        <form method="POST">
+          <div class="form-group">
+            <label for="show_name">Show Name:</label>
+            <input type="text" class="form-control" id="show_name" name="show_name" required>
+          </div>
+          <div class="form-group">
+            <label for="release_date">Release Date:</label>
+            <input type="date" class="form-control" id="release_date" name="release_date" required>
+          </div>
+          <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" class="form-control" id="genre" name="genre" required>
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <input type="number" class="form-control" id="rating" name="rating" min="1" max="10" required>
+          </div>
+          <div class="form-group">
+            <label for="language">Language:</label>
+            <input type="text" class="form-control" id="language" name="language" required>
+          </div>
+          <div class="form-group">
+            <label for="show_type">Show Type:</label>
+            <select class="form-control" id="show_type" name="show_type" required>
+              <option value="TV Show">TV Show</option>
+              <option value="Movie">Movie</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="movie_link">Movie Link:</label>
+            <input type="text" class="form-control" id="movie_link" name="movie_link">
+          </div>
+          <div class="form-group">
+            <label for="movie_poster">Movie Poster:</label>
+            <input type="text" class="form-control" id="movie_poster" name="movie_poster">
+          </div>
+          <button type="submit" class="btn btn-primary" name="add_show">Add Show</button>
+        </form>
+      </div>
+    {% endif %}
+    
+    <div class="mt-3">
+      <h4>TV Show List</h4>
+      <form method="POST">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Show ID</th>
+              <th>Show Name</th>
+              <th>Release Date</th>
+              <th>Genre</th>
+              <th>Rating</th>
+              <th>Language</th>
+              <th>Show Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for show_id, show_data in tv_shows.items() %}
+              <tr>
+                <td>{{ show_id }}</td>
+                <td>{{ show_data[0] }}</td>
+                <td>{{ show_data[1] }}</td>
+                <td>{{ show_data[2] }}</td>
+                <td>{{ show_data[3] }}</td>
+                <td>{{ show_data[4] }}</td>
+                <td>{{ show_data[5] }}</td>
+                <td>
+                  <button type="submit" class="btn btn-danger btn-sm" name="delete_show" value="{{ show_id }}">Delete</button>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </form>
+    </div>
+    
+    <form method="POST" action="{{ url_for('toggle_add_show') }}">
+      <button type="submit" class="btn btn-secondary mt-3">Toggle Add New TV Show</button>
+    </form>
+    
+    <form method="POST" action="{{ url_for('toggle_show_list') }}">
+      <button type="submit" class="btn btn-secondary mt-3">Toggle Show List</button>
+    </form>
+  </div>
+{% endblock %}

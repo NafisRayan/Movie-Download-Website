@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="profile" style="background-image: url('/static/b.gif');background-size: cover;">
+    <h1>Welcome to Your Profile, {{ user_data['username'] }}!</h1>
+    <p><strong>User ID:</strong> {{ user_id }}</p>
+    <p><strong>Username:</strong> {{ user_data['username'] }}</p>
+    <p><strong>Email:</strong> {{ user_data['email'] }}</p>
+    <p><strong>Country:</strong> {{ user_data['country'] }}</p>
+    <p><strong>Liked Category:</strong> {{ user_data['liked_category'] }}</p>
+    <h2>Watched Shows:</h2>
+    <ul>
+        {% for show_data in user_data['watched_shows'] %}
+        <li>{{ show_data }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Planned Shows:</h2>
+    <ul>
+        {% for show_data in user_data['planned_shows'] %}
+        <li>{{ show_data }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Log Out</a>
+</div>
+{% endblock %}
