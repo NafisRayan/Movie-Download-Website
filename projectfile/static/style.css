@@ -1,0 +1,820 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.tv-series-category {
+    background-image: url('static/9(3).gif');
+    background-position: center;
+    background-size: cover; /* Make the image cover the entire element */
+}
+
+.movies-category {
+    background-image: url('static/9(3).gif');
+    background-position: center;
+    background-size: cover; /* Make the image cover the entire element */
+}
+
+.anime-category {
+    background-image: url('/static/9(3).gif');
+    background-position: center;
+    background-size: cover; /* Make the image cover the entire element */
+}
+
+.top-bar {
+    background-color: #000000; /* Red */
+    color: #fff;
+    padding: 20px 0; /* Increase vertical padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.logo a {
+    color: #fa6161;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    animation: flashLogoText 1.5s infinite alternate; /* Apply text animation */
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    animation: spinLogoImage 4s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Apply image animation */
+}
+
+@keyframes flashLogoText {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+
+@keyframes spinLogoImage {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(720deg) scale(1.2);
+    }
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px; /* Increase font size */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+.home {
+    background-image: url("/static/9 (3).gif");
+    background-size: cover; /* Cover the whole area while maintaining aspect ratio */
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 215px;
+}
+
+.home h1 {
+    font-size: 50px;
+}
+
+.home p {
+    font-size: 18px;
+}
+
+/*.show-list {
+    background-image: url("/static/xyz.jpg");
+    background-size: cover; /* Cover the whole area while maintaining aspect ratio */
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 215px;
+}
+*/
+
+.show-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px;
+}
+
+
+.show-list li {
+    list-style: none;
+    background-color: #02171f; /* Dark Green */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.show-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.show-details {
+    background-color: #111;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.container {
+    position: relative;
+  }
+  
+  .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/static/9 (1).gif');
+    opacity: 200; /* Adjust the opacity to control the visibility of the GIF */
+    z-index: -1; /* Place the GIF behind the content */
+  }
+  
+  /* Darken the background to enhance the effect */
+  .dark-background {
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the color and opacity to match your design */
+    /* Additional styling properties for the dark background */
+  }
+
+.show-details h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.show-details p {
+    font-size: 30px;
+}
+
+.login-form, .register-form {
+    background-color: #29255d;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 40px auto;
+    max-width: 500px; /* Increase max-width */
+    width: 80%; /* Use percentage width for responsiveness */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-form:hover, .register-form:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-form h1, .register-form h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.login-form form, .register-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label, .register-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-form input[type="text"], .register-form input[type="text"],
+.login-form input[type="password"], .register-form input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.login-form input[type="text"]:focus, .register-form input[type="text"]:focus,
+.login-form input[type="password"]:focus, .register-form input[type="password"]:focus {
+    border-color: #02171f;
+}
+
+.login-form input[type="submit"], .register-form input[type="submit"] {
+    background-color: #02171f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-form input[type="submit"]:hover, .register-form input[type="submit"]:hover {
+    background-color: #053640;
+}
+.show-list {
+    display: flex;
+    gap: 30px;
+    padding: 40px;
+}
+
+.show-category {
+    flex: 1;
+    background-color: #02171f; /* Dark Green */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Add a subtle drop shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Add smooth transitions */
+}
+
+.show-category:hover {
+    transform: translateY(-5px); /* Add a slight lift effect on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5); /* Enhance the drop shadow on hover */
+}
+
+.show-category h2 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+}
+
+.show-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.show-category li {
+    margin-bottom: 10px;
+}
+
+.show-category li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s; /* Add color transition on hover */
+}
+
+.show-category li a:hover {
+    color: #00cc99; /* Change the color on hover */
+}
+
+.register-link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.error {
+    margin-top: 10px;
+    color: #f00;
+}
+
+
+/* ... */
+
+/* Additional styles for chat boxes */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-box {
+    font-size: 160px; /* 10 times bigger font size */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 150px; /* Adjust padding for proper sizing */
+    border-radius: 200px; /* Increase border radius for more rounded corners */
+    margin-bottom: 100px; /* Increase margin for better spacing */
+    display: flex;
+    align-items: center;
+}
+
+.chat-user {
+    font-size: 160px; /* 10 times bigger font size */
+    margin-right: 20px; /* Adjust spacing */
+}
+
+.chat-message {
+    font-size: 160px; /* 10 times bigger font size */
+}
+
+/* ... */
+
+/* Add custom styles for the send button */
+.message-input {
+    width: 50%;
+    padding: 150px; /* Increase padding for message input */
+    font-size: 160px; /* Increase font size for message input */
+    border: 1px solid #ccc;
+    border-radius: 200px; /* Increase border radius for more rounded corners */
+    box-shadow: none;
+}
+
+.message-input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    
+}
+
+.send-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    /* New styles to make the button more beautiful */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    /* New hover effect with a slight vertical movement */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ... */
+
+
+/* styles.css */
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add custom styles for the search bar */
+.search-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: none;
+    border-radius: 30px; /* Adjust the radius as needed */
+    font-size: 16px;
+    width: 300px; /* Adjust the width as needed */
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 30px; /* Adjust the radius as needed */
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.discussion-page {
+    background-image: url("/static/9 (2).gif"); /* Replace with the actual image path */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px; /* Adjust as needed */
+    text-align: center;
+}
+
+
+.chat-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background color */
+    color: #fff;
+    padding: 15px;
+    border-radius: 20px; /* Rounded corners */
+    margin-bottom: 10px;
+}
+
+.chat-user {
+    font-size: 20px; /* Increase font size for user name */
+}
+
+.chat-message {
+    font-size: 18px; /* Increase font size for chat message */
+}
+
+.message-input {
+    padding: 15px; /* Increase padding for message input */
+    font-size: 16px; /* Increase font size for message input */
+    border-radius: 20px; /* Rounded corners for message input */
+}
+
+.tv-series-category {
+    background-image: url('series.jpg');
+    background-position: center ; /* You can adjust these values */
+    background-size: cover;
+}
+
+.movies-category {
+    background-image: url('movie.jpg');
+    background-position: center ; /* You can adjust these values */
+    background-size: cover;
+}
+
+.anime-category {
+    background-image: url('anime.jpg');
+    background-position: center ; /* You can adjust these values */
+    background-size: cover;
+}
+
+.show-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Show details section */
+.show-details {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Show poster section */
+.show-poster {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bounce 2s infinite;
+}
+
+/* Poster image */
+.show-poster img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Action buttons section */
+.action-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 2s forwards;
+}
+
+/* Add to Watched and Add to Planned buttons */
+.action-buttons form {
+  margin: 0 10px;
+}
+
+/* Animation keyframes for poster bounce effect */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Animation keyframes for button fadeInUp effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional styling for background */
+body {
+  background-color: #100f25;
+  background-image: radial-gradient(#2b2a53, #100f25);
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Container for show details and poster */
+.show-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  /* Show details section */
+  .show-details {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    color: #333;
+  }
+  
+  /* Show poster section */
+  .show-poster {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 2s infinite;
+  }
+  
+  /* Poster image */
+  .show-poster img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Action buttons section */
+  .action-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 2s forwards;
+  }
+  
+  /* Add to Watched and Add to Planned buttons */
+  .action-buttons form {
+    margin: 0 10px;
+  }
+  
+  /* Animation keyframes for poster bounce effect */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  
+  /* Animation keyframes for button fadeInUp effect */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Additional styling for background */
+  body {
+    background-color: #212029;
+    background-image: radial-gradient(#1b1a1a, #1e1e22);
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .action-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 2s forwards;
+  }
+  
+  /* Add to Watched and Add to Planned buttons */
+  .action-buttons form {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  .action-buttons form button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .action-buttons form button:hover {
+    background-color: #4f48cc;
+    transform: scale(1.05);
+  }
+  
+  /* Animation keyframes for button fadeInUp effect */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  /* Add this CSS code to your stylesheet */
+
+/* Style for the TV show thumbnail grid */
+.show-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for each TV show item */
+.show-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Add a hover effect to each TV show item */
+.show-item:hover {
+    transform: scale(1.05);
+}
+
+/* Style for the TV show thumbnail image */
+.show-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Style for the TV show title */
+.show-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the title on hover */
+.show-item:hover .show-title {
+    opacity: 1;
+}
+
+/* Add a subtle animation on hover for the title */
+.show-title:hover {
+    background-color: #ffa500;
+    animation: bounce 0.2s ease-in-out;
+}
+
+/* Define a bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Style for main heading */
+.home h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Style for section headings */
+.trending-shows h2, .top-10-shows h2 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Style for the TV show list */
+.show-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+/* Style for each TV show item */
+.show-item {
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.show-item:hover {
+    transform: scale(1.05);
+}
+
+/* Style for show titles */
+.show-title {
+    font-size: 16px;
+    margin-top: 10px;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Style for show images */
+.show-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Style for search bar */
+.search-form {
+    text-align: center;
+}
+
+.search-input {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    color: white;
+    background-color: transparent;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
